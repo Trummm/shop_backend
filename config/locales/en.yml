@@ -31,3 +31,8 @@
 
 en:
   hello: "Hello world"
+  faker:
+    address:
+      address: "%{street_name} %{building_number}"
+      street_name: "123 Fake St"
+      building_number: "Apt 4"
