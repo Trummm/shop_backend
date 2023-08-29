@@ -18,6 +18,10 @@ gem 'devise', '~> 4.1'
 
 gem 'jwt'
 
+gem 'rswag-api'
+
+gem 'rswag-ui'
+
 gem 'rack-cors'
 
 gem 'faker', require: false

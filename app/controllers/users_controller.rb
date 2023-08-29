@@ -1,6 +1,16 @@
 class UsersController < ApplicationController
   skip_before_action :authenticate_request, only: %i[create update]
-  before_action :get_user, only: %i[show update]
+  before_action :get_user, only: %i[show update destroy]
+  
+  swagger_controller :users, 'Users'
+
+  swagger_api :index do
+    summary "Fetches all User items"
+    notes "This lists all the active users"
+    response :unauthorized
+    response :not_acceptable, "The request you made is not acceptable"
+    response :requested_range_not_satisfiable
+  end
 
   def index 
     @users = User.all
