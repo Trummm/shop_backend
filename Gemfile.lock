@@ -173,6 +173,11 @@ GEM
     responders (3.1.0)
       actionpack (>= 5.2)
       railties (>= 5.2)
+    rswag-api (2.10.1)
+      railties (>= 3.1, < 7.1)
+    rswag-ui (2.10.1)
+      actionpack (>= 3.1, < 7.1)
+      railties (>= 3.1, < 7.1)
     ruby_http_client (3.5.5)
     sendgrid-ruby (6.5.2)
       ruby_http_client (~> 3.4)
@@ -206,6 +211,8 @@ DEPENDENCIES
   puma (~> 5.0)
   rack-cors
   rails (~> 7.0.6)
+  rswag-api
+  rswag-ui
   sendgrid-ruby (~> 6.5.0)
   tzinfo-data
 
