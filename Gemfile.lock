@@ -205,7 +205,7 @@ DEPENDENCIES
   faker
   i18n
   jwt
-  mysql2 (~> 0.5)
+  mysql2 (~> 0.5.2)
   pry
   pry-rails
   puma (~> 5.0)
@@ -217,7 +217,7 @@ DEPENDENCIES
   tzinfo-data
 
 RUBY VERSION
-   ruby 3.0.0p0
+   ruby 3.0.3p157
 
 BUNDLED WITH
-   2.2.3
+   2.3.17
