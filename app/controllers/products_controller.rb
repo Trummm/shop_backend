@@ -1,11 +1,26 @@
 class ProductsController < ApplicationController
   skip_before_action :authenticate_request, only: %i[index search]
+  before_action :find_product
   
   def index 
     @products = Product.all
 
     render json: @products
   end
+
+  def create 
+    @product = current_user.products.new(product_params)
+
+    if @product.save
+      render json: { status: 'Success', product: @product }
+    else
+      render json: { status: 'error', errors: @product.errors.full_messages }
+    end 
+  end 
+
+  def show 
+    render json: @product
+  end 
 
   def search 
     @products = Product.all
@@ -22,4 +37,17 @@ class ProductsController < ApplicationController
 
     render json: @products
   end 
+
+  private 
+
+  def product_params
+    params.require(:product).permit(:name, :description, :price, :user_id, :category_id)
+  end 
+
+  def find_product 
+    @product = Product.find_by(id: params[:id)])
+
+    return render json: {errors: ["Product not found!"]}, status: 404 if @product.blank?
+  end 
+
 end

@@ -2,7 +2,6 @@ class CategoriesController < ApplicationController
   skip_before_action :authenticate_request, only: %i[index products_of_category]
 
   def index
-    # binding.pry
     @categories = Category.all 
 
     render json: @categories
